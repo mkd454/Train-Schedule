@@ -15,7 +15,7 @@ open index.html in your preferred browser
 
 ## Task List
 
-  - [ ] When adding trains, administrators should be able to submit the following:
+  - When adding trains, administrators should be able to submit the following:
     
     - [ ] Train Name
     
