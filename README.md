@@ -4,7 +4,7 @@
 This is a train schedule application that incorporates Firebase to host arrival and departure data. The app will retrieve and manipulate this information with Moment.js. The website will provide up-to-date information about various trains, namely their arrival times and how many minutes remain until they arrive at their station.
 
 ## Demo
-<img src=''><br>
+<img src='Train-Schedule.png'><br>
 [Click here to start](https://mkd454.github.io/Train-Schedule/)
 
 ## Getting Started 
@@ -27,9 +27,9 @@ open index.html in your preferred browser
   
   - [x] Code this app to calculate when the next train will arrive; this should be relative to the current time.
   
-  - [ ] Users from many different machines must be able to view same train times.
+  - [x] Users from many different machines must be able to view same train times.
   
-  - [ ] Styling and theme are completely up to you. Get Creative!
+  - [x] Styling and theme are completely up to you. Get Creative!
 
   - [ ] Consider updating your "minutes to arrival" and "next train time" text once every minute. This is significantly more challenging; only attempt this if you've completed the actual activity and committed it somewhere on GitHub for safekeeping (and maybe create a second GitHub repo).
 
