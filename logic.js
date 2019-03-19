@@ -21,7 +21,7 @@ $(document).ready(function() {
     var database = firebase.database();
   
   // 2. Create button for adding new trains - then update the html + update the database
-  $(".btn").on("click", function() {
+  $(".btn").on("click", function(event) {
     event.preventDefault();
 
     //Grabs user input
@@ -42,10 +42,10 @@ $(document).ready(function() {
     database.ref().push(newTrain);
 
     // Logs everything to console
-    console.log(newTrain.Train);
-    console.log(newTrain.Destination);
-    console.log(newTrain.FirstTrainTime);
-    console.log(newTrain.Frequency);
+    // console.log(newTrain.Train);
+    // console.log(newTrain.Destination);
+    // console.log(newTrain.FirstTrainTime);
+    // console.log(newTrain.Frequency);
 
     // Empty form text boxes
     $("#NewTrainName").val("");
@@ -56,9 +56,37 @@ $(document).ready(function() {
 
   // 3. Create Firebase event for adding new train to the database and a row in the html when a user adds an entry
   database.ref().on("child_added", function(snapshot) {
+    // console.log(snapshot.val());
+
+    // Store everything into a variable.
+    var trainName = snapshot.val().Train;
+    var destination = snapshot.val().Destination;
+    var trainTime = snapshot.val().FirstTrainTime;
+    var frequency = snapshot.val().Frequency;
+
+    // console.log(trainName);
+    // console.log(destination);
+    // console.log(trainTime);
+    // console.log(frequency);
+
+    // Prettify the train start
+    var trainStartPretty = moment(trainTime).format("h:mm");
+
+    // Minutes away
+    var minutesAway = moment(trainTime).fromNow();
     
+    // Create the new row
+    var newRow = $("<tr>").append(
+      $("<td>").text(trainName),
+      $("<td>").text(destination),
+      $("<td>").text(frequency),
+      $("<td>").text(trainStartPretty),
+      $("<td>").text(minutesAway),
+    );
+
+    // Append the new row to the table
+    $("#train-schedule > tbody").append(newRow);
+  
   })
 
-
-  
 });
