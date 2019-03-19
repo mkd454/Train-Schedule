@@ -56,7 +56,7 @@ $(document).ready(function() {
 
   // 3. Create Firebase event for adding new train to the database and a row in the html when a user adds an entry
   database.ref().on("child_added", function(snapshot) {
-    // console.log(snapshot.val());
+    console.log(snapshot.val());
 
     // Store everything into a variable.
     var trainName = snapshot.val().Train;
@@ -70,10 +70,10 @@ $(document).ready(function() {
     // console.log(frequency);
 
     // Prettify the train start
-    var trainStartPretty = moment(trainTime).format("h:mm");
+    var trainStartPretty = moment(trainTime, "HH:mm:ss").format("h:mm A");
 
     // Minutes away
-    var minutesAway = moment(trainTime).fromNow();
+    var minutesAway = moment(trainTime, "HH:mm:ss").fromNow("mm");
     
     // Create the new row
     var newRow = $("<tr>").append(

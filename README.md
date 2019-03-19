@@ -17,15 +17,15 @@ open index.html in your preferred browser
 
   - When adding trains, administrators should be able to submit the following:
     
-    - [ ] Train Name
+    - [x] Train Name
     
-    - [ ] Destination 
+    - [x] Destination 
     
-    - [ ] First Train Time -- in military time
+    - [x] First Train Time -- in military time
     
-    - [ ] Frequency -- in minutes
+    - [x] Frequency -- in minutes
   
-  - [ ] Code this app to calculate when the next train will arrive; this should be relative to the current time.
+  - [x] Code this app to calculate when the next train will arrive; this should be relative to the current time.
   
   - [ ] Users from many different machines must be able to view same train times.
   
